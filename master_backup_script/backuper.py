@@ -173,10 +173,10 @@ class Backup(GeneralClass):
         :return: True on success, raise RuntimError on error.
         """
         if hasattr(self, 'mysql_socket'):
-            command_connection = '{} --defaults-file={} -u{} --password={}'
+            command_connection = "{} --defaults-file={} -u{} --password='{}' "
             command_execute = ' -e "flush logs"'
         else:
-            command_connection = '{} --defaults-file={} -u{} --password={} --host={}'
+            command_connection = "{} --defaults-file={} -u{} --password='{}' --host={}"
             command_execute = ' -e "flush logs"'
 
         # Open connection
